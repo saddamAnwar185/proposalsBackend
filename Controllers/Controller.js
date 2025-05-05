@@ -75,7 +75,12 @@ const hashPassword = async (password) => {
       }
   
       const token = setUser(loginUser); // Assuming it returns a JWT token
-      res.cookie('token', token)
+       res.cookie('token', token, {
+       secure: true,       // Ensures cookie is only sent over HTTPS
+       sameSite: 'None',   // Enables cross-origin sharing
+       partitioned: true,  // Adds the Partitioned attribute
+       httpOnly: true,     // For security (optional, to prevent access from JS)
+  });
   
       return res.json({
         success: true,
