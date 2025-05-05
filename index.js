@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true })); // Built-in replacement for bod
 
 // === Third-party Middlewares ===
 app.use(cors({
-    origin: 'https://saddamAnwar185.github.io',
+    origin: 'https://saddamanwar185.github.io',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 }));
